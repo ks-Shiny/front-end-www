@@ -1,0 +1,54 @@
+{
+  "name": "wdc-fe-www",
+  "version": "1.0.0",
+  "description": "伟东云教育前端官网",
+  "author": "tanghao",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --fix --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "consola": "^2.10.1",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "iview": "^3.1.5",
+    "nuxt": "^2.0.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    "@nuxtjs/markdownit": "^1.2.6",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "deepmerge": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "lint-staged": "^8.2.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "pretty-quick --staged",
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
