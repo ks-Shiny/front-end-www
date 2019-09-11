@@ -31,7 +31,7 @@
     </header>
 </template>
 <style lang="less">
-@navheight : 52px;
+@nav-height : 52px;
 .navbar {
   width: 100%;
   top: 0;
@@ -42,7 +42,7 @@
   // background: linear-gradient(120deg, #7f70f5, #0ea0ff);
   .nav {
     max-width: 1344px;
-    height: @navHeight;
+    height: @nav-height;
     // padding: 0 15px;
   }
   .nav-menu {
@@ -60,7 +60,7 @@
       // line-height: 50px;
       // color: #fff;
       // font-weight: bolder;
-      line-height: @navHeight;
+      line-height: @nav-height;
       font-size: 16px;
       // margin-left: 5px;
       &.nuxt-link-exact-active {
