@@ -1,8 +1,8 @@
 module.exports = {
     mode: 'universal',
     /*
-     ** Headers of the page
-     */
+   ** Headers of the page
+   */
     head: {
         title: process.env.npm_package_name || '',
         meta: [
@@ -20,20 +20,30 @@ module.exports = {
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     /*
-     ** Customize the progress-bar color
-     */
+   ** Customize the progress-bar color
+   */
     loading: { color: '#13ff8f' },
     /*
-     ** Global CSS
-     */
+   ** Global CSS
+   */
     css: ['iview/dist/styles/iview.css'],
+    less: {
+        javascriptEnabled: true,
+    },
+    build: {
+        loaders: {
+            less: {
+                javascriptEnabled: true,
+            },
+        },
+    },
     /*
-     ** Plugins to load before mounting the App
-     */
+   ** Plugins to load before mounting the App
+   */
     plugins: ['@/plugins/iview'],
 
     /*
-     ** Nuxt.js modules
-     */
+   ** Nuxt.js modules
+   */
     modules: ['@nuxtjs/pwa', '@nuxtjs/markdownit'],
 };

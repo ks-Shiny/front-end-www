@@ -6,6 +6,7 @@ const app = express();
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js');
+const createDataConfig = require('./dirFolder');
 
 config.dev = process.env.NODE_ENV !== 'production';
 
@@ -22,6 +23,9 @@ async function start() {
     } else {
         await nuxt.ready();
     }
+
+    // 创建文章配置
+    createDataConfig();
 
     // Give nuxt middleware to express
     app.use(nuxt.render);
