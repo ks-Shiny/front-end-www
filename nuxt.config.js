@@ -1,4 +1,6 @@
 import articleConfig from './data/data';
+
+const path = require('path');
 // 设置分页路由
 function setPageArticle(type) {
     const result = [];
@@ -7,7 +9,7 @@ function setPageArticle(type) {
 
     // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= totalPage; i++) {
-        result.push(`/articles/${type}/${i}`);
+        result.push(`/page/${type}/${i}`);
     }
     detailResult = files.map(name => `/detail/${type}/${name}`);
     return result.concat(detailResult);
@@ -49,6 +51,13 @@ module.exports = {
         javascriptEnabled: true,
     },
     build: {
+        extend(config) {
+            config.module.rules.push({
+                test: /\.md$/,
+                loader: 'frontmatter-markdown-loader',
+                include: path.resolve(__dirname, 'static'),
+            });
+        },
         loaders: {
             less: {
                 javascriptEnabled: true,
@@ -63,7 +72,8 @@ module.exports = {
     /*
    ** Nuxt.js modules
    */
-    modules: ['@nuxtjs/pwa', '@nuxtjs/markdownit'],
+    modules: ['@nuxtjs/pwa'],
+    // modules: ['@nuxtjs/pwa', '@nuxtjs/markdownit'],
     markdownit: {
         injected: true,
     },

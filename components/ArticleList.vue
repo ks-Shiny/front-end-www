@@ -6,9 +6,14 @@
                 :key="item.id"
                 class="article-item"
             >
-                <div class="name">
-                    {{ item }}
-                </div>
+                <nuxt-link :to="`/detail/${$route.params.type}/${item.name}`">
+                    <div class="article-title">
+                        {{ item.title }}
+                    </div>
+                    <p class="article-decoration">
+                        {{ item.description }}
+                    </p>
+                </nuxt-link>
             </div>
         </section>
         <section class="page">
@@ -35,8 +40,11 @@ import { mapState } from 'vuex';
 
 export default {
     name: 'ArticleList',
-    data() {
-        return {};
+    props: {
+        list: {
+            type: Array,
+            default: () => [],
+        },
     },
     computed: {
         ...mapState(['articleType']),
@@ -56,12 +64,7 @@ export default {
             return this.dataConfig.totalPage || 1;
         },
         size() {
-            return this.dataConfig.size || 10;
-        },
-        list() {
-            const start = Math.max(this.currentPage - 1, 0) * this.size;
-            const end = start + this.size;
-            return this.allFiles.slice(start, end);
+            return this.dataConfig.size || 15;
         },
     },
     methods: {
@@ -79,16 +82,35 @@ export default {
             this.$router.push(`/article/${this.$route.params.type}/${page}`);
         },
     },
-}; </script
->>
+};
+</script>
 <style lang="less">
 .article-list {
+  padding: 0 48px;
   .article-item {
-    width: 200px;
-    height: 200px;
-    margin-right: 20px;
-    display: inline-block;
-    background: #ccc;
+    margin-bottom: 20px;
+    &:hover {
+      .article-title {
+        color: #3e74ae;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #3e74ae;
+      transition-property: all;
+      transition-duration: 0.4s;
+    }
+    .article-title {
+      padding-top: 20px;
+      margin-bottom: 12px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #030303;
+    }
+    .article-decoration {
+      margin: 0;
+      color: #767676;
+    }
   }
   .page {
     text-align: center;

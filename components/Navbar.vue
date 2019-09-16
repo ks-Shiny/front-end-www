@@ -10,13 +10,13 @@
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :to="`/article/blog/1`"
+                    :to="`/page/blog/1`"
                 >
                     技术分享
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :to="`/article/week/1`"
+                    :to="`/page/week/1`"
                 >
                     技术周刊
                 </nuxt-link>

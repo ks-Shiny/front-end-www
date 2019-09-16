@@ -11,6 +11,8 @@ const articleConfig = require('./dirFolder');
 config.dev = process.env.NODE_ENV !== 'production';
 
 async function start() {
+    // 创建文章配置
+    await articleConfig();
     // Init Nuxt.js
     const nuxt = new Nuxt(config);
 
@@ -23,10 +25,6 @@ async function start() {
     } else {
         await nuxt.ready();
     }
-
-    // 创建文章配置
-    articleConfig();
-
     // Give nuxt middleware to express
     app.use(nuxt.render);
 

@@ -1,7 +1,23 @@
 <template>
-    <div>
-        详情
-        <div v-html="$md.render(model)" />
+    <div class="article-detail">
+        <div class="intro">
+            <div class="elevate-cover">
+                <div>
+                    <span class="date">{{ date }}-{{ author }}</span>
+                    <h1 class="title">
+                        {{ title }}
+                    </h1>
+                    <p class="description">
+                        {{ description }}
+                    </p>
+                </div>
+                <div class="img">
+                    <img :src="`/images/${type}/${name}/_main.jpg`">
+                </div>
+            </div>
+        </div>
+
+        <div v-html="html" />
     </div>
 </template>
 
@@ -18,23 +34,68 @@ export default {
         }
         return true;
     },
-    asyncData({ params }) {
-        if (process.server) {
-            const data = {};
-            const fs = require('fs');
-            // 读取本地文件
-            const raw = fs
-                .readFileSync(
-                    `./static/article/${params.type}/${params.name}.md`,
-                    'utf8',
-                )
-                .toString();
-            data.model = raw;
-            return data;
-        }
-        return false;
+    async asyncData({ params }) {
+        const fileContent = await import(
+            /* eslint comma-dangle: ["error", "never"] */
+            `~/static/article/${params.type}/${params.name}.md`
+        );
+        const attr = fileContent.attributes;
+        const { html } = fileContent;
+
+        return {
+            title: attr.title,
+            author: attr.author,
+            date: attr.date,
+            description: attr.description,
+            html,
+            noMainImage: attr.noMainImage,
+            name: attr.name,
+            type: params.type
+        };
     },
+    head() {
+        return {
+            title: this.title
+        };
+    },
+    transition: {
+        name: 'slide-fade'
+    }
 };
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+.article-detail {
+  .elevate-cover {
+    color: #767676;
+    font-size: 14px;
+    .title {
+      font-size: 36px;
+      font-weight: 500;
+      color: #030303;
+      margin-bottom: 12px;
+    }
+    .img-cover {
+      line-height: 0;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .description {
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
