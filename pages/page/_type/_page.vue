@@ -16,8 +16,8 @@ export default {
     },
     async asyncData({ params, store }) {
         const dataConfig = store.state[params.type] || {};
-        const start = Math.max(params.page - 1, 0) * dataConfig.size;
-        const end = start + dataConfig.size;
+        const start = Math.max(params.page - 1, 0) * dataConfig.pageSize;
+        const end = start + dataConfig.pageSize;
         const nameList = dataConfig.files.slice(start, end);
 
         async function asyncImport(name) {

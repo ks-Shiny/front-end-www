@@ -64,14 +64,14 @@ export default {
             return this.dataConfig.totalPage || 1;
         },
         size() {
-            return this.dataConfig.size || 15;
+            return this.dataConfig.pageSize || 15;
         },
     },
     methods: {
         handlePrev() {
             const page = this.currentPage - 1 > 0 ? this.currentPage - 1 : 1;
 
-            this.$router.push(`/article/${this.$route.params.type}/${page}`);
+            this.$router.push(`/page/${this.$route.params.type}/${page}`);
         },
 
         handleNext() {
@@ -79,7 +79,7 @@ export default {
                 ? this.currentPage
                 : this.currentPage + 1;
 
-            this.$router.push(`/article/${this.$route.params.type}/${page}`);
+            this.$router.push(`/page/${this.$route.params.type}/${page}`);
         },
     },
 };
