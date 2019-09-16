@@ -5,9 +5,9 @@
   "author": "tanghao",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --exec babel-node",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
+    "start": "cross-env NODE_ENV=production node server/index.js --exec babel-node",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --fix --ignore-path .gitignore ."
   },
@@ -29,7 +29,9 @@
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
     "deepmerge": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",

@@ -1,3 +1,21 @@
+import articleConfig from './data/data';
+// 设置分页路由
+function setPageArticle(type) {
+    const result = [];
+    let detailResult = [];
+    const { totalPage, files } = articleConfig.data[type];
+
+    // eslint-disable-next-line no-plusplus
+    for (let i = 1; i <= totalPage; i++) {
+        result.push(`/articles/${type}/${i}`);
+    }
+    detailResult = files.map(name => `/detail/${type}/${name}`);
+    return result.concat(detailResult);
+}
+const articleRoute = Object.keys(articleConfig.data).reduce(
+    (acc, item) => acc.concat(setPageArticle(item)),
+    [],
+);
 module.exports = {
     mode: 'universal',
     /*
@@ -48,5 +66,8 @@ module.exports = {
     modules: ['@nuxtjs/pwa', '@nuxtjs/markdownit'],
     markdownit: {
         injected: true,
+    },
+    generate: {
+        routes: articleRoute,
     },
 };

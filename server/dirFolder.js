@@ -3,6 +3,7 @@ const path = require('path');
 
 const blogFolder = './static/article';
 const jsonPath = './data/data.js';
+const pageSize = 5; // 每页分页
 
 const jsonObj = {};
 
@@ -13,6 +14,8 @@ function dealType(dirName) {
         fs.readdir(filePath, (_err, files) => {
             jsonObj[dirName].total = files.length;
             jsonObj[dirName].files = files.map(item => path.basename(item, '.md'));
+            jsonObj[dirName].pageSize = pageSize;
+            jsonObj[dirName].totalPage = Math.ceil(jsonObj[dirName].total / pageSize) || 1;
             resolve();
         });
     });
