@@ -6,6 +6,7 @@ const jsonPath = './data/data.js';
 const pageSize = 5; // 每页分页
 
 const jsonObj = {};
+let result = [];
 
 function dealType(dirName) {
     const filePath = path.join(blogFolder, dirName);
@@ -22,22 +23,44 @@ function dealType(dirName) {
 }
 function wirteJson() {
     const content = `export default {data : ${JSON.stringify(jsonObj)}}`;
-    fs.writeFile(jsonPath, content, (err) => {
-        console.log(err);
+    return new Promise((resolve) => {
+        fs.writeFile(jsonPath, content, (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('writi end');
+                resolve();
+            }
+        });
     });
 }
 
-function readStart() {
-    let result = [];
-    new Promise((resolve) => {
+function readFile() {
+    return new Promise((resolve) => {
         fs.readdir(blogFolder, (_err, files) => {
             result = files.map(file => dealType(file));
             resolve();
         });
-    }).then(() => {
-        Promise.all(result).then(() => {
-            wirteJson();
-        });
     });
+}
+async function readStart() {
+    await readFile();
+    await Promise.all(result);
+    const later = await wirteJson();
+    return later;
+    // readFile().then(async (res) => {
+    //     console.log('wirting')
+    //     return wirteJson();
+    // });
+    // new Promise((resolve) => {
+    //     fs.readdir(blogFolder, (_err, files) => {
+    //         result = files.map(file => dealType(file));
+    //         resolve();
+    //     });
+    // }).then(() => {
+    //     Promise.all(result).then(() => {
+    //         wirteJson();
+    //     });
+    // });
 }
 module.exports = readStart;

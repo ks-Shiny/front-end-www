@@ -1,8 +1,9 @@
-import articleConfig from './data/data';
-
 const path = require('path');
-// 设置分页路由
-function setPageArticle(type) {
+const dirFolder = require('./server/dirFolder');
+
+dirFolder();
+// 设置路由
+function setPageArticle(type, articleConfig) {
     const result = [];
     let detailResult = [];
     const { totalPage, files } = articleConfig.data[type];
@@ -14,10 +15,16 @@ function setPageArticle(type) {
     detailResult = files.map(name => `/detail/${type}/${name}`);
     return result.concat(detailResult);
 }
-const articleRoute = Object.keys(articleConfig.data).reduce(
-    (acc, item) => acc.concat(setPageArticle(item)),
-    [],
-);
+async function getArticleRoute() {
+    const articleConfig = await import('./data/data.js');
+    const articleRoute = Object.keys(articleConfig.default.data).reduce(
+        (acc, item) => acc.concat(setPageArticle(item, articleConfig.default)),
+        [],
+    );
+    console.log(articleRoute);
+    return articleRoute;
+}
+
 module.exports = {
     mode: 'universal',
     /*
@@ -78,6 +85,6 @@ module.exports = {
         injected: true,
     },
     generate: {
-        routes: articleRoute,
+        routes: getArticleRoute,
     },
 };

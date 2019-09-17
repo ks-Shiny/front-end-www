@@ -31,6 +31,7 @@
     "@vue/eslint-config-airbnb": "^4.0.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "babel-preset-env": "^1.7.0",
     "deepmerge": "^2.1.1",
     "eslint": "^5.16.0",
