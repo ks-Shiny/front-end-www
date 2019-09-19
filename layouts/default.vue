@@ -1,55 +1,46 @@
 <template>
-    <div class="container index-bg">
-        <div class="header-title container-inner">
-            <h1 class="team-name">
-                wdc-fe
-            </h1>
-            <div class="subtitle ">
-                这是一段描述
-            </div>
-            <navbar />
-        </div>
-        <Layout>
-            <Layout
-                :style="{ padding: '20px 0px' }"
-                class="container-inner"
+    <div class="default-page">
+        <navbar />
+
+        <Layout :style="{ padding: '0px 0px' }">
+            <Content
+                :style="{ background: '#fff', padding: '20px' }"
+                class="container"
             >
-                <Content :style="{ background: '#fff' }">
+                <Layout>
                     <Layout>
-                        <Layout>
-                            <Content :style="{ minHeight: '280px', background: '#fff' }">
-                                <nuxt />
-                            </Content>
-                        </Layout>
-                        <Sider :style="{ background: '#fff', marginLeft: '20px' }">
-                            <!-- 联系我们 -->
-                            <div class="widget-wrap">
-                                <div class="widget-title">
-                                    联系我们
-                                </div>
-                                <div class="widget">
-                                    <ul class="clearfix widget-social-icons">
-                                        <li>
-                                            <a href="">
-                                                <i class="ivu-icon ivu-icon-logo-github" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="ivu-icon ivu-icon-logo-we" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </Sider>
+                        <Content :style="{ minHeight: '280px', background: '#fff' }">
+                            <nuxt />
+                        </Content>
                     </Layout>
-                </Content>
-            </Layout>
-            <Footer class="layout-footer-center">
-                2019&copy;wdc-fe
-            </Footer>
+                    <Sider :style="{ background: '#fff' }">
+                        <!-- 联系我们 -->
+                        <div class="widget-wrap">
+                            <div class="widget-title">
+                                联系我们
+                            </div>
+                            <div class="widget">
+                                <ul class="clearfix widget-social-icons">
+                                    <li>
+                                        <a href="">
+                                            <i class="ivu-icon ivu-icon-logo-github" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <i class="ivu-icon ivu-icon-logo-we" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Sider>
+                </Layout>
+            </Content>
         </Layout>
+        <Footer class="footer-part">
+            Designed by wdc-fe
+        </Footer>
     </div>
 </template>
 
@@ -64,24 +55,18 @@ export default {
 </script>
 
 <style lang="less">
-@primary-color : #3e74ae;
-.pull-left {
-  float: left;
+.default-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.clearfix {
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
+.footer-part {
+  background: #f8f8f8;
+  text-align: center;
+  border-top: 1px solid #eee;
 }
-a {
-  outline: none;
-  transition: all 0.14s ease 0s;
-}
+// @primary-color : #3e74ae;
 .header-title {
-  // text-align: center;
-  color: #fff;
   padding-top: 30px;
   .team-name {
     font-size: 36px;
@@ -93,38 +78,7 @@ a {
     color: #999;
   }
 }
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  .container-inner {
-    max-width: 1180px;
-    min-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-.index-bg {
-  background: #16171b;
-  //    background: url(../static/images/bg.jpg) no-repeat top center fixed;
-  // background-size: 100% ;
-}
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
 .links {
   padding-top: 15px;
 }
@@ -138,7 +92,7 @@ a {
     margin: 0 0 -1px;
     display: inline-block;
     line-height: 40px;
-    border-bottom: 3px solid @primary-color;
+    border-bottom: 3px solid @main;
   }
   .widget {
     margin: 0 0 30px;

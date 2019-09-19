@@ -53,7 +53,7 @@ module.exports = {
     /*
    ** Global CSS
    */
-    css: ['iview/dist/styles/iview.css'],
+    css: ['iview/dist/styles/iview.css', '@/assets/css/main.less'],
     less: {
         javascriptEnabled: true,
     },
@@ -79,10 +79,13 @@ module.exports = {
     /*
    ** Nuxt.js modules
    */
-    modules: ['@nuxtjs/pwa'],
+    modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources'],
     // modules: ['@nuxtjs/pwa', '@nuxtjs/markdownit'],
-    markdownit: {
-        injected: true,
+    // markdownit: {
+    //     injected: true,
+    // },
+    styleResources: {
+        less: ['./assets/css/utilities/_variables.less'],
     },
     generate: {
         routes: getArticleRoute,

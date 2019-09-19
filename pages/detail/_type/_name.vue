@@ -17,7 +17,10 @@
             </div>
         </div>
 
-        <div v-html="html" />
+        <div
+            class="markdow-part"
+            v-html="html"
+        />
     </div>
 </template>
 
@@ -90,6 +93,49 @@ export default {
     animation-fill-mode: forwards;
   }
 }
+.markdow-part {
+  padding: 20px 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+
+  h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  li {
+    list-style-type: initial;
+  }
+
+  pre {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    border-radius: 4px;
+    background-color: #f6f8fa;
+    overflow-x: scroll;
+    display: block;
+    margin-bottom: 50px;
+
+    code {
+      background-color: #f6f8fa;
+    }
+  }
+
+  code {
+    background: #f3f4f4;
+    border-radius: 4px;
+    display: inline;
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

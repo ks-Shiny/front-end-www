@@ -1,6 +1,6 @@
 <template>
     <header class="navbar">
-        <div class="nav">
+        <div class="nav container">
             <div class="nav-menu">
                 <nuxt-link
                     class="nav-item"
@@ -31,40 +31,37 @@
     </header>
 </template>
 <style lang="less">
-@nav-height : 52px;
 .navbar {
+  height: @nav-height;
   width: 100%;
   top: 0;
   z-index: 2;
-  // border-top: 2px solid black;
-  // border-bottom: 1px solid #f1f1f1;
-  // background-color: #fff;
-  // background: linear-gradient(120deg, #7f70f5, #0ea0ff);
-  .nav {
-    max-width: 1344px;
-    height: @nav-height;
-    // padding: 0 15px;
-  }
+  border-bottom: 1px solid #eee;
   .nav-menu {
     a.nav-item {
-      background: #060608;
       display: inline-block;
-      margin: 0 -2px 0 0;
       padding: 0 20px;
       height: 100%;
-      color: #fff;
+      line-height: @nav-height;
       font-weight: 400;
       font-family: "Yanone Kaffeesatz", "方正姚体", Arial, Helvetica, sans-serif;
       text-decoration: none;
-      // text-transform: uppercase;
-      // line-height: 50px;
-      // color: #fff;
-      // font-weight: bolder;
       line-height: @nav-height;
       font-size: 16px;
-      // margin-left: 5px;
-      &.nuxt-link-exact-active {
-        background: #3e74ae;
+      position: relative;
+      color: #333;
+      &:hover {
+        color: @main;
+      }
+      &.nuxt-link-exact-active:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: @main;
+        //#6190e8
       }
     }
   }

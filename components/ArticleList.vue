@@ -17,21 +17,21 @@
             </div>
         </section>
         <section class="page">
-            <button
+            <Button
                 :disabled="currentPage == 1"
-                class="prev"
+                class="prev page-btn"
                 @click="handlePrev"
             >
                 上一页
-            </button>
+            </Button>
             <span> {{ currentPage }} / {{ totalPage }}</span>
-            <button
+            <Button
                 :disabled="currentPage == totalPage"
-                class="next"
+                class="next page-btn"
                 @click="handleNext"
             >
                 下一页
-            </button>
+            </Button>
         </section>
     </div>
 </template>
@@ -86,17 +86,18 @@ export default {
 </script>
 <style lang="less">
 .article-list {
-  padding: 0 48px;
+  padding: 0 40px;
   .article-item {
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #dfdfdf;
     &:hover {
       .article-title {
-        color: #3e74ae;
+        color: @main;
       }
     }
     a {
       text-decoration: none;
-      color: #3e74ae;
+      color: @main;
       transition-property: all;
       transition-duration: 0.4s;
     }
@@ -106,15 +107,19 @@ export default {
       font-size: 30px;
       font-weight: bold;
       color: #030303;
+      transition: color 0.3s;
     }
     .article-decoration {
       margin: 0;
       color: #767676;
+      font-size: 16px;
     }
   }
   .page {
     text-align: center;
     margin-top: 50px;
+  }
+  .page-btn {
   }
 }
 </style>
