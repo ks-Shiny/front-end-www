@@ -26,11 +26,6 @@
                                             <i class="ivu-icon ivu-icon-logo-github" />
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="">
-                                            <i class="ivu-icon ivu-icon-logo-we" />
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
