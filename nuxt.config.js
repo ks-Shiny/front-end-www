@@ -21,7 +21,6 @@ async function getArticleRoute() {
         (acc, item) => acc.concat(setPageArticle(item, articleConfig.default)),
         [],
     );
-    console.log(articleRoute);
     return articleRoute;
 }
 
@@ -59,11 +58,22 @@ module.exports = {
     },
     build: {
         extend(config) {
-            config.module.rules.push({
-                test: /\.md$/,
-                loader: 'frontmatter-markdown-loader',
-                include: path.resolve(__dirname, 'static'),
-            });
+            config.module.rules.push(
+                {
+                    test: /\.md$/,
+                    loader: 'frontmatter-markdown-loader',
+                    include: path.resolve(__dirname, 'datas'),
+                },
+                {
+                    test: /\.pdf$/,
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'dist/pdf',
+                        publicPath: './pdf',
+                    },
+                    include: path.resolve(__dirname, 'datas'),
+                },
+            );
         },
         loaders: {
             less: {

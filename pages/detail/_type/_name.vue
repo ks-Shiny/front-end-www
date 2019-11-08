@@ -21,9 +21,12 @@
             class="markdow-part"
             v-html="html"
         />
-        <div class="pdf-outer">
+        <div
+            v-if="pdfUrl"
+            class="pdf-outer"
+        >
             <iframe
-                :src="`/third-party/js/pdfjs/web/viewer.html?file=${pdfUrl}`"
+                :src="`/third-party/pdfjs/web/viewer.html?file=${pdfUrl}`"
                 width="100%"
                 height="100%"
                 scrolling="no"
@@ -64,7 +67,7 @@ export default {
             noMainImage: attr.noMainImage,
             name: attr.name,
             type: params.type,
-            pdfUrl: attr.pdfname ? `/pdf/${attr.pdfname}.pdf` : ''
+            pdfUrl: attr.pdfname ? `../../../../../pdf/${attr.pdfname}.pdf` : ''
         };
     },
     head() {

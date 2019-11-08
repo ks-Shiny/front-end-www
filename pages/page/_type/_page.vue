@@ -23,8 +23,9 @@ export default {
         async function asyncImport(name) {
             const wholeMD = await import(
                 /* eslint comma-dangle: ["error", "never"] */
-                `~/static/article/${params.type}/${name}.md`
+                `~/datas/${params.type}/${name}.md`
             );
+            wholeMD.attributes.name = name;
             return wholeMD.attributes;
         }
 
