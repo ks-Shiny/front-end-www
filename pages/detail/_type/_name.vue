@@ -21,6 +21,16 @@
             class="markdow-part"
             v-html="html"
         />
+        <div class="pdf-outer">
+            <iframe
+                :src="`/js/pdfjs/web/viewer.html?file=${pdfUrl}`"
+                width="100%"
+                height="100%"
+                scrolling="no"
+            >
+                您的浏览器不支持PDF阅读
+            </iframe>
+        </div>
     </div>
 </template>
 
@@ -40,7 +50,7 @@ export default {
     async asyncData({ params }) {
         const fileContent = await import(
             /* eslint comma-dangle: ["error", "never"] */
-            `~/static/article/${params.type}/${params.name}.md`
+            `~/datas/${params.type}/${params.name}.md`
         );
         const attr = fileContent.attributes;
         const { html } = fileContent;
@@ -53,7 +63,8 @@ export default {
             html,
             noMainImage: attr.noMainImage,
             name: attr.name,
-            type: params.type
+            type: params.type,
+            pdfUrl: attr.pdfname ? `/pdf/${attr.pdfname}.pdf` : ''
         };
     },
     head() {
@@ -135,7 +146,10 @@ export default {
     padding: 10px 15px;
   }
 }
-
+.pdf-outer {
+  min-height: 500px;
+  height: 500px;
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
