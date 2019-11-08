@@ -51,11 +51,13 @@
     "commit-msg": "commitlint -E GIT_PARAMS"
   },
   "lint-staged": {
-    "*.{js,vue}": [
-      "pretty-quick --staged",
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "ignore": ["dist/"]
+    "linters": {
+      "*.{js,vue}": [
+        "pretty-quick --staged",
+        "vue-cli-service lint",
+        "git add"
+      ]
+    },
+    "ignore": ["dist/", "static/third-party"]
   }
 }
