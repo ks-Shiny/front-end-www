@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{180:function(o,t){o.exports={attributes:{name:"blog2",title:"blog3",author:"作者2",date:"2019-09-12",description:"blog2描述\n"},html:"<h2>blog</h2>\n"}}}]);

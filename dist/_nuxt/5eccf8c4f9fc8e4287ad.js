@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{209:function(n,t,e){"use strict";e.r(t);var l={layout:"index",components:{Navbar:e(98).a}},o=e(6),component=Object(o.a)(l,function(){var n=this.$createElement,t=this._self._c||n;return t("div",[t("navbar"),this._v(" "),t("div",[this._v("我是首页呀")])],1)},[],!1,null,null,null);t.default=component.exports}}]);

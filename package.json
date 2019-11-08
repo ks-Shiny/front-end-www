@@ -52,8 +52,7 @@
   },
   "lint-staged": {
     "*.{js,vue}": [
-      "pretty-quick --staged",
-      "vue-cli-service lint",
+      
       "git add"
     ]
   }
