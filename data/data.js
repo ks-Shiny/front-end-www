@@ -1,13 +1,15 @@
 export default {
     data: {
-        blog: {
-            total: 3,
-            files: ['blog1', 'blog2', 'blog3'],
+        share: {
+            total: 5,
             pageSize: 5,
             totalPage: 1,
+            files: ['blog1', 'blog2', 'blog3', 'blog4', 'pdf'],
         },
-        week: {
+        weekly: {
             total: 8,
+            pageSize: 5,
+            totalPage: 2,
             files: [
                 'week1',
                 'week2',
@@ -18,8 +20,6 @@ export default {
                 'week7',
                 'week8',
             ],
-            pageSize: 5,
-            totalPage: 2,
         },
     },
 };

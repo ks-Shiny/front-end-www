@@ -23,7 +23,7 @@
         />
         <div class="pdf-outer">
             <iframe
-                :src="`/js/pdfjs/web/viewer.html?file=${pdfUrl}`"
+                :src="`/third-party/js/pdfjs/web/viewer.html?file=${pdfUrl}`"
                 width="100%"
                 height="100%"
                 scrolling="no"
