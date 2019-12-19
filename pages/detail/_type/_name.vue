@@ -39,22 +39,18 @@
 
 <script>
 export default {
-    validate({ params, store }) {
-        const { type = '', name = '' } = params;
-        const articleDetail = store.state[type];
-        if (store.state.articleType.indexOf(type) < 0) {
-            return false;
+    async asyncData({ params, error }) {
+        let fileContent;
+        try {
+            fileContent = await import(
+                /* eslint comma-dangle: ["error", "never"] */
+                `~/datas/${params.type}/${params.name}.md`
+            );
+        } catch (err) {
+            if (err.code === 'MODULE_NOT_FOUND') {
+                return error({ statusCode: 404, message: 'not found' });
+            }
         }
-        if (articleDetail.files.indexOf(name) < 0) {
-            return false;
-        }
-        return true;
-    },
-    async asyncData({ params }) {
-        const fileContent = await import(
-            /* eslint comma-dangle: ["error", "never"] */
-            `~/datas/${params.type}/${params.name}.md`
-        );
         const attr = fileContent.attributes;
         const { html } = fileContent;
 
@@ -67,7 +63,9 @@ export default {
             noMainImage: attr.noMainImage,
             name: attr.name,
             type: params.type,
-            pdfUrl: attr.pdfname ? `../../../../../pdf/${attr.pdfname}.pdf` : ''
+            pdfUrl: attr.pdfname
+                ? `http://localhost:3333/pdf/${attr.pdfname}.pdf`
+                : ''
         };
     },
     head() {

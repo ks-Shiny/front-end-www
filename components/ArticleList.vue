@@ -16,23 +16,6 @@
                 </nuxt-link>
             </div>
         </section>
-        <section class="page">
-            <Button
-                :disabled="currentPage == 1"
-                class="prev page-btn"
-                @click="handlePrev"
-            >
-                上一页
-            </Button>
-            <span> {{ currentPage }} / {{ totalPage }}</span>
-            <Button
-                :disabled="currentPage == totalPage"
-                class="next page-btn"
-                @click="handleNext"
-            >
-                下一页
-            </Button>
-        </section>
     </div>
 </template>
 <script>
@@ -47,9 +30,11 @@ export default {
         },
     },
     computed: {
-        ...mapState(['articleType']),
-        dataConfig() {
-            return this.$store.state[this.$route.params.type] || {};
+        ...mapState(['docType']),
+        pageData() {
+            const { type } = this.$route.params;
+            const { page } = this.$route.params;
+            return this.$store.state[type][page] || {};
         },
         total() {
             return this.dataConfig.total || 0;
@@ -62,24 +47,6 @@ export default {
         },
         totalPage() {
             return this.dataConfig.totalPage || 1;
-        },
-        size() {
-            return this.dataConfig.pageSize || 15;
-        },
-    },
-    methods: {
-        handlePrev() {
-            const page = this.currentPage - 1 > 0 ? this.currentPage - 1 : 1;
-
-            this.$router.push(`/page/${this.$route.params.type}/${page}`);
-        },
-
-        handleNext() {
-            const page = this.currentPage + 1 > this.totalPage
-                ? this.currentPage
-                : this.currentPage + 1;
-
-            this.$router.push(`/page/${this.$route.params.type}/${page}`);
         },
     },
 };
@@ -114,12 +81,6 @@ export default {
       color: #767676;
       font-size: 16px;
     }
-  }
-  .page {
-    text-align: center;
-    margin-top: 50px;
-  }
-  .page-btn {
   }
 }
 </style>

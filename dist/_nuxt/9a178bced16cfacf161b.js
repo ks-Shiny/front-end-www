@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{189:function(e,k){e.exports={attributes:{name:"week6",title:"week6",author:"作者1",date:"2019-09-10",description:"week6描述jjjjjjjjkkkkk\n"},html:"<h2>week6111</h2>\n"}}}]);

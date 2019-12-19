@@ -1,5 +1,5 @@
 ---
-name: "ppt"
+name: "pdf"
 title: ppt
 author: "作者12"
 date: "2019-09-10"

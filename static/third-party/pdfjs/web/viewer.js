@@ -2174,9 +2174,10 @@
         var file = void 0;
         var queryString = document.location.search.substring(1);
         var params = (0, _ui_utils.parseQueryString)(queryString);
+        console.log(params.file);
         file =
           "file" in params
-            ? "static/" + params.file
+            ? params.file
             : _app_options.AppOptions.get("defaultUrl");
         validateFileURL(file);
         var fileInput = document.createElement("input");

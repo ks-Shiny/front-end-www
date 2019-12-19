@@ -1,12 +1,4 @@
-import articleList from '../data/data';
-
-const articleType = Object.keys(articleList.data);
-// const size = 15;
-// articleType.forEach((item) => {
-//     const data = articleList.data[item];
-//     data.pageSize = size;
-//     data.totalPage = Math.ceil(data / size) || 1;
-// });
+import docConifg from '../data/docConfig';
 
 // eslint-disable-next-line import/prefer-default-export
-export const state = () => Object.assign({ articleType }, articleList.data);
+export const state = () => Object.assign(docConifg);

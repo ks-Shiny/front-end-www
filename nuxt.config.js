@@ -1,27 +1,27 @@
 const path = require('path');
-const dirFolder = require('./server/dirFolder');
+const getDocData = require('./server/getDocData');
 
-dirFolder();
+getDocData();
 // 设置路由
-function setPageArticle(type, articleConfig) {
+function makePageRoute(type, config) {
     const result = [];
     let detailResult = [];
-    const { totalPage, files } = articleConfig.data[type];
-
+    const totalPage = config[type].length;
+    const docs = config[type].reduce((acc, item) => acc.concat(item.data.posts));
     // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= totalPage; i++) {
         result.push(`/page/${type}/${i}`);
     }
-    detailResult = files.map(name => `/detail/${type}/${name}`);
+    detailResult = docs.map(name => `/detail/${type}/${name}`);
     return result.concat(detailResult);
 }
-async function getArticleRoute() {
-    const articleConfig = await import('./data/data.js');
-    const articleRoute = Object.keys(articleConfig.default.data).reduce(
-        (acc, item) => acc.concat(setPageArticle(item, articleConfig.default)),
+async function getDocRoute() {
+    const docConfig = await import('./data/docConfig.js');
+    const docRoute = docConfig.docType.reduce(
+        (acc, item) => acc.concat(makePageRoute(item, docConfig)),
         [],
     );
-    return articleRoute;
+    return docRoute;
 }
 
 module.exports = {
@@ -98,6 +98,6 @@ module.exports = {
         less: ['./assets/css/utilities/_variables.less'],
     },
     generate: {
-        routes: getArticleRoute,
+        routes: getDocRoute,
     },
 };
