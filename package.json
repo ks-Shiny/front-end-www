@@ -61,7 +61,7 @@
       ]
     },
     "ignore": [
-      "dist",
+      "dist/",
       "static/third-party",
       "node_modules"
     ]
