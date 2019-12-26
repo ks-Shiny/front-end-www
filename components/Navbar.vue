@@ -1,6 +1,6 @@
 <template>
     <header class="navbar">
-        <div class="nav container">
+        <div class="container">
             <div class="nav-menu">
                 <nuxt-link
                     class="nav-item"
@@ -10,21 +10,27 @@
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :to="`/page/share/1`"
+                    :to="`/blog/all/1`"
                 >
-                    技术分享
+                    博客
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :to="`/page/weekly/1`"
+                    :to="`/weekly/education`"
                 >
                     技术周刊
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :to="`/about`"
+                    :to="`/aboutus`"
                 >
-                    关于我们
+                    团队介绍
+                </nuxt-link>
+                <nuxt-link
+                    class="nav-item"
+                    :to="`/joinus`"
+                >
+                    加入团队
                 </nuxt-link>
             </div>
         </div>
@@ -34,39 +40,32 @@
 .navbar {
   height: @nav-height;
   width: 100%;
-  top: 0;
   z-index: 2;
-  border-bottom: 1px solid #eee;
+  box-shadow: 0px 1px 0px 0px rgba(38, 38, 38, 1);
   .nav-menu {
+    display: flex;
+    align-items: center;
+    height: @nav-height;
+    float: right;
     a.nav-item {
+      margin: 0 30px;
       display: inline-block;
-      padding: 0 20px;
-      height: 100%;
-      line-height: @nav-height;
+      text-align: center;
+      height: 34px;
+      line-height: 34px;
       font-weight: 400;
-      font-family: "Yanone Kaffeesatz", "方正姚体", Arial, Helvetica, sans-serif;
       text-decoration: none;
-      line-height: @nav-height;
       font-size: 16px;
       position: relative;
-      color: #333;
-      &:hover {
-        color: @main;
-      }
-      &.nuxt-link-exact-active:after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 3px;
-        width: 100%;
-        background-color: @main;
-        //#6190e8
+      color: #fff;
+      min-width: 86px;
+      padding: 0px 10px;
+      border-radius: 17px;
+      box-sizing: border-box;
+      &.nuxt-link-exact-active {
+        background-color: #2f2f2f;
       }
     }
-  }
-  .nav-right {
-    float: right;
   }
 }
 </style>

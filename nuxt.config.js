@@ -1,27 +1,50 @@
 const path = require('path');
-const getDocData = require('./server/getDocData');
+const getDocData = require('./server/docData');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 getDocData();
 // 设置路由
-function makePageRoute(type, config) {
-    const result = [];
+function blogRoute(category, docConfig) {
+    const config = docConfig.blogCategoryData[category];
     let detailResult = [];
-    const totalPage = config[type].length;
-    const docs = config[type].reduce((acc, item) => acc.concat(item.data.posts));
+    const pageResult = [];
+    const totalPage = config.length;
+    const docs = config.reduce((acc, item) => acc.concat(item.data.posts), []);
     // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= totalPage; i++) {
-        result.push(`/page/${type}/${i}`);
+        pageResult.push(`/blog/${category}/${i}`);
     }
-    detailResult = docs.map(name => `/detail/${type}/${name}`);
-    return result.concat(detailResult);
+    detailResult = docs.map(item => `/blogdetail/${category}/${item.name}`);
+    return pageResult.concat(detailResult);
 }
-async function getDocRoute() {
-    const docConfig = await import('./data/docConfig.js');
-    const docRoute = docConfig.docType.reduce(
-        (acc, item) => acc.concat(makePageRoute(item, docConfig)),
+function setBlogRoute(docConfig) {
+    let result = [];
+    const category = docConfig.blogCategory || [];
+    result = category.reduce(
+        (acc, item) => acc.concat(blogRoute(item, docConfig)),
         [],
     );
-    return docRoute;
+    return result;
+}
+function setWeeklyRoute(docConfig) {
+    let result = [];
+    const category = docConfig.weeklyCategory || [];
+    result = category.reduce((acc, item) => {
+        const docs = docConfig.weeklyData[item];
+        let route = [];
+        route = docs.map(item => `/weeklydetail/${category}/${item.name}`);
+        route.push(`/weekly/${item}`);
+        return route;
+    }, []);
+    return result;
+}
+
+async function setDocRoute() {
+    const docConfig = await import('./data/testConfig.js');
+    const blogRoute = setBlogRoute(docConfig.default);
+    const weeklyRoute = setWeeklyRoute(docConfig.default);
+    const result = blogRoute.concat(weeklyRoute);
+    return result;
 }
 
 module.exports = {
@@ -52,7 +75,7 @@ module.exports = {
     /*
    ** Global CSS
    */
-    css: ['iview/dist/styles/iview.css', '@/assets/css/main.less'],
+    css: ['@/assets/css/main.less'],
     less: {
         javascriptEnabled: true,
     },
@@ -62,7 +85,7 @@ module.exports = {
                 {
                     test: /\.md$/,
                     loader: 'frontmatter-markdown-loader',
-                    include: path.resolve(__dirname, 'datas'),
+                    include: path.resolve(__dirname, 'docs'),
                 },
                 {
                     test: /\.pdf$/,
@@ -71,9 +94,15 @@ module.exports = {
                         outputPath: 'dist/pdf',
                         publicPath: './pdf',
                     },
-                    include: path.resolve(__dirname, 'datas'),
+                    include: path.resolve(__dirname, 'docs'),
                 },
             );
+            // config.plugins.push(
+            //     new CopyWebpackPlugin([
+            //         { from: path.resolve(__dirname, 'docs/images'), to: './static/' },
+            //     ],{ignore: [],
+            //         copyUnmodified: true}));
+            return config;
         },
         loaders: {
             less: {
@@ -98,6 +127,6 @@ module.exports = {
         less: ['./assets/css/utilities/_variables.less'],
     },
     generate: {
-        routes: getDocRoute,
+        routes: setDocRoute,
     },
 };

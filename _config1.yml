@@ -1,0 +1,22 @@
+# Site
+title:
+subtitle:
+description:
+keywords:
+
+# Pagination
+## Set per_page to 0 to disable pagination
+blog_category:
+  - FE
+  - UI
+  - BE
+  - QA
+weekly_category:
+  - education
+  - profession
+perPage: 3
+index_weekly_num: 3
+index_blog_perpage: 5
+
+#configDir
+docConfigDir: ./data/testConfig.js

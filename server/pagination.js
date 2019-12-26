@@ -3,7 +3,7 @@ function pagination(posts, options) {
 
     const { length } = posts;
     // eslint-disable-next-line no-prototype-builtins
-    const perPage = options.hasOwnProperty('perPage') ? +options.perPage : 10;
+    const perPage = options.hasOwnProperty('perPage') ? +options.perPage : 1;
     const totalPage = perPage ? Math.ceil(length / perPage) : 1;
     const result = [];
 
