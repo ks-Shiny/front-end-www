@@ -5,10 +5,10 @@
   "author": "tanghao",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --exec babel-node",
+    "dev": "cross-env NODE_ENV=development node server/moveBuildFiles.js&nodemon server/index.js --watch server --exec babel-node",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js --exec babel-node",
-    "generate": "cross-env NODE_ENV=static nuxt generate",
+    "generate": "cross-env NODE_ENV=static node server/moveBuildFiles.js&nuxt generate",
     "lint": "eslint --ext .js,.vue --fix --ignore-path .gitignore ."
   },
   "dependencies": {
