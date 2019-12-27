@@ -1,0 +1,11 @@
+{
+  "name": "wdc-fe-www",
+  "short_name": "wdc-fe-www",
+  "description": "伟东云教育前端官网",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#13ff8f",
+  "lang": "en"
+}
