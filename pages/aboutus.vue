@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="about container">
         <div class="about-banner" />
         <div class="about-flex">
             <div class="about-flex-item">
@@ -35,7 +35,7 @@
   .about-banner {
     width: 100%;
     height: 450px;
-    background: purple;
+    background: #834dfa url(/images/aboutus.jpg) no-repeat left top/100% 450px;
     margin-bottom: 100px;
     .sec-body {
       color: #333;

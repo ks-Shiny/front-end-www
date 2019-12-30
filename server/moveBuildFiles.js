@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const fse = require('fs-extra');
 
 async function copyFiles(from, to) {
@@ -8,4 +9,5 @@ async function copyFiles(from, to) {
         console.error(err);
     }
 }
-copyFiles('./docs/static/images', './static/images');
+copyFiles('./docs/static/images', './static/images/docs');
+copyFiles('./docs/pdf', './static/pdf');

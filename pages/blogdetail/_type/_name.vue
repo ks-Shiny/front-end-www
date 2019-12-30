@@ -48,7 +48,7 @@ export default {
             );
         } catch (err) {
             if (err.code === 'MODULE_NOT_FOUND') {
-                return error({ statusCode: 404, message: 'noeeet found' });
+                return error({ statusCode: 404, message: 'not found' });
             }
         }
         const attr = fileContent.attributes;
@@ -63,9 +63,7 @@ export default {
             noMainImage: attr.noMainImage,
             name: attr.name,
             type: params.type,
-            pdfUrl: attr.pdfname
-                ? `http://localhost:3333/pdf/${attr.pdfname}.pdf`
-                : ''
+            pdfUrl: attr.pdfname ? `/pdf/${attr.pdfname}` : ''
         };
     },
     head() {

@@ -10,6 +10,7 @@ export default {
               title: "bacondd-ipsum",
               author: "作者dd12kk3323",
               date: "2019-09-10",
+              pdfname: "test.pdf",
               description: "blog1描述ddded\n",
               enDate: "Sept. 2019 10"
             }
@@ -86,6 +87,7 @@ export default {
               title: "bacondd-ipsum",
               author: "作者dd12kk3323",
               date: "2019-09-10",
+              pdfname: "test.pdf",
               description: "blog1描述ddded\n",
               enDate: "Sept. 2019 10"
             },
@@ -164,6 +166,7 @@ export default {
               title: "bacondd-ipsum",
               author: "作者dd12kk3323",
               date: "2019-09-10",
+              pdfname: "test.pdf",
               description: "blog1描述ddded\n",
               enDate: "Sept. 2019 10"
             },

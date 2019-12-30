@@ -108,7 +108,7 @@ export default {
   .joinus-banner {
     width: 100%;
     height: 450px;
-    background: palegoldenrod;
+    background: #834dfa url(/images/joinus.jpg) no-repeat left top/100% 450px;
   }
   .m-b-item {
     margin-bottom: 24px;

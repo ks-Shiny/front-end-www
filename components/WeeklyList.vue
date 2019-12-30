@@ -48,7 +48,7 @@ export default {
     float: left;
     .weekly-cover {
       height: 300px;
-      background: blanchedalmond;
+      background: url(/images/weekly.png) no-repeat;
       margin-bottom: 20px;
     }
     .weekly-detail {

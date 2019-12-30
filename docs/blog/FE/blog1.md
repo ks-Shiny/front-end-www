@@ -3,6 +3,7 @@ name: blog1
 title: bacondd-ipsum
 author: "作者dd12kk3323"
 date: "2019-09-10"
+pdfname: "test.pdf"
 description: |
   blog1描述ddded
 ---
