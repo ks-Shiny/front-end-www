@@ -63,8 +63,8 @@ function makeData(folder, name) {
     const filesName = fs.readdirSync(filePath);
     const allFiles = filesName
         .map((item) => {
-            const content = loaderFile(filePath, item, name);
-            content.weeklyType = name;
+            const content = loaderFile(filePath, item);
+            content.categoryType = name;
             return content;
         })
         .filter(item => !!item);

@@ -13,7 +13,7 @@ export default {
               description:
                 "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "FE"
+              categoryType: "FE"
             }
           ],
           prev: 0,
@@ -34,7 +34,7 @@ export default {
               description:
                 "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "UI"
+              categoryType: "UI"
             }
           ],
           prev: 0,
@@ -43,25 +43,7 @@ export default {
         }
       }
     ],
-    BE: [
-      {
-        data: {
-          posts: [
-            {
-              name: 1,
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              description: "blog1描述ddded\n",
-              enDate: "Sept. 2019 10",
-              weeklyType: "BE"
-            }
-          ],
-          prev: 0,
-          next: 0,
-          totalPage: 1
-        }
-      }
-    ],
+    BE: [],
     QA: [
       {
         data: {
@@ -72,7 +54,7 @@ export default {
               date: "2019-09-10",
               description: "blog1描述ddded\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "QA"
+              categoryType: "QA"
             }
           ],
           prev: 0,
@@ -93,7 +75,7 @@ export default {
               description:
                 "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "FE"
+              categoryType: "FE"
             },
             {
               name: "ui",
@@ -103,15 +85,7 @@ export default {
               description:
                 "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "UI"
-            },
-            {
-              name: 1,
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              description: "blog1描述ddded\n",
-              enDate: "Sept. 2019 10",
-              weeklyType: "BE"
+              categoryType: "UI"
             },
             {
               name: "qa",
@@ -119,7 +93,7 @@ export default {
               date: "2019-09-10",
               description: "blog1描述ddded\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "QA"
+              categoryType: "QA"
             }
           ],
           prev: 0,
@@ -134,13 +108,12 @@ export default {
     education: [
       {
         name: "blog1",
-        title: "bacondd-ipsum",
         author: "作者dd12kk3323",
         date: "2019-09-10",
         description:
           "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
         enDate: "Sept. 2019 10",
-        weeklyType: "education"
+        categoryType: "education"
       }
     ],
     profession: []
@@ -159,7 +132,7 @@ export default {
               description:
                 "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "FE"
+              categoryType: "FE"
             },
             {
               name: "ui",
@@ -169,15 +142,7 @@ export default {
               description:
                 "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "UI"
-            },
-            {
-              name: 1,
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              description: "blog1描述ddded\n",
-              enDate: "Sept. 2019 10",
-              weeklyType: "BE"
+              categoryType: "UI"
             },
             {
               name: "qa",
@@ -185,7 +150,7 @@ export default {
               date: "2019-09-10",
               description: "blog1描述ddded\n",
               enDate: "Sept. 2019 10",
-              weeklyType: "QA"
+              categoryType: "QA"
             }
           ],
           prev: 0,
@@ -197,13 +162,12 @@ export default {
     weeklyData: [
       {
         name: "blog1",
-        title: "bacondd-ipsum",
         author: "作者dd12kk3323",
         date: "2019-09-10",
         description:
           "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
         enDate: "Sept. 2019 10",
-        weeklyType: "education"
+        categoryType: "education"
       }
     ]
   }

@@ -8,7 +8,7 @@ function blogRoute(category, docConfig) {
     const config = docConfig.blogCategoryData[category];
     let detailResult = [];
     const pageResult = [];
-    const totalPage = config.length;
+    const totalPage = config.length > 0 ? config.length : 1;
     const docs = config.reduce((acc, item) => acc.concat(item.data.posts), []);
     // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= totalPage; i++) {

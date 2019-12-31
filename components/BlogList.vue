@@ -1,12 +1,15 @@
 <template>
     <div class="blog-flex">
         <div class="article-list">
-            <section class="list-detail">
+            <section
+                v-if="pageData.posts"
+                class="list-detail"
+            >
                 <nuxt-link
                     v-for="(item, index) in pageData.posts"
                     :key="index"
                     class="article-item"
-                    :to="`/blogdetail/${blogType}/${item.name}`"
+                    :to="`/blogdetail/${item.categoryType}/${item.name}`"
                 >
                     <div class="article-left">
                         <div class="article-date">
@@ -26,6 +29,12 @@
                         class="article-img"
                     >
                 </nuxt-link>
+            </section>
+            <section
+                v-else
+                class="list-no-data"
+            >
+                暂无数据
             </section>
             <section class="page">
                 <Button
@@ -128,6 +137,10 @@ export default {
 };
 </script>
 <style lang="less">
+.list-no-data {
+  text-align: center;
+  margin: 50px auto;
+}
 .blog-flex {
   display: flex;
   .blog-category {

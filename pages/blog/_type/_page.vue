@@ -50,13 +50,17 @@ export default {
     },
     async asyncData({ params, store }) {
         const typeData = store.state.blogCategoryData[params.type] || [];
-        const data = typeData[params.page - 1].data || {};
+        let data = {};
+        if (typeData.length > 0) {
+            // eslint-disable-next-line prefer-destructuring
+            data = typeData[params.page - 1].data;
+        }
         return { pageData: data };
     },
     validate({ params, store }) {
         const { page, type = '' } = params;
         const articleDetail = store.state.blogCategoryData[type];
-        const totalPage = articleDetail.length || 0;
+        const totalPage = articleDetail.length || 1;
         if (store.state.blogCategory.indexOf(type) < 0) {
             return false;
         }

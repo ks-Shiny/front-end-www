@@ -6,7 +6,7 @@
                 :key="item.id"
                 class="weekly-item"
             >
-                <nuxt-link :to="`/weeklydetail/${item.weeklyType}/${item.name}`">
+                <nuxt-link :to="`/weeklydetail/${item.categoryType}/${item.name}`">
                     <div class="weekly-cover" />
                     <div class="weekly-detail">
                         <div class="date">
