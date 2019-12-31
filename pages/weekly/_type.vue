@@ -9,7 +9,7 @@
             </nuxt-link>
             <nuxt-link
                 class="bar-item"
-                :to="`/weekly/promission`"
+                :to="`/weekly/profession`"
             >
                 专业领域
             </nuxt-link>

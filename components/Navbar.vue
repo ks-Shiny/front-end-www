@@ -10,34 +10,35 @@
             <div class="nav-menu">
                 <nuxt-link
                     class="nav-item"
+                    :class="{ active: currentRouterName === 'index' }"
                     :to="`/`"
                 >
                     首页
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :class="{ active: $router.currentRoute.name === 'blog-type-page' }"
+                    :class="{ active: currentRouterName === 'blog-type-page' }"
                     :to="`/blog/all/1`"
                 >
                     博客
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :class="{ active: $router.currentRoute.name === 'weekly-type' }"
+                    :class="{ active: currentRouterName === 'weekly-type' }"
                     :to="`/weekly/education`"
                 >
                     技术周刊
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :class="{ active: $router.currentRoute.name === 'aboutus' }"
+                    :class="{ active: currentRouterName === 'aboutus' }"
                     :to="`/aboutus`"
                 >
                     团队介绍
                 </nuxt-link>
                 <nuxt-link
                     class="nav-item"
-                    :class="{ active: $router.currentRoute.name === 'joinus' }"
+                    :class="{ active: currentRouterName === 'joinus' }"
                     :to="`/joinus`"
                 >
                     加入团队
@@ -46,6 +47,15 @@
         </div>
     </header>
 </template>
+<script>
+export default {
+    computed: {
+        currentRouterName() {
+            return this.$nuxt.$route.name;
+        },
+    },
+}; </script
+>>
 <style lang="less">
 .navbar {
   height: @nav-height;
