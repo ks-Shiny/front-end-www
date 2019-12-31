@@ -34,6 +34,7 @@ export default {
             currentPage: 1,
         };
     },
+    created() {},
     methods: {
         handlePage(page) {
             this.currentPage = page;

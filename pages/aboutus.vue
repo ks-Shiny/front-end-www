@@ -24,6 +24,10 @@
             </div>
         </div>
         <div class="about-logo">
+            <img
+                src="/images/logo@2x.png"
+                alt=""
+            >
             <p class="slogan">
                 凡事有结果，事事有回音
             </p>
@@ -61,6 +65,12 @@
     p {
       font-size: 14px;
       line-height: 26px;
+    }
+  }
+  .about-logo {
+    text-align: center;
+    img {
+      width: 76px;
     }
   }
   .slogan {

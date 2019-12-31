@@ -13,7 +13,7 @@ const stringify = src => JSON.stringify(src, null, 4)
     .replace(/\u2028/g, '\\u2028')
     .replace(/\u2029/g, '\\u2029');
 try {
-    config = yaml.safeLoad(fs.readFileSync('_config1.yml', 'utf8'));
+    config = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
 } catch (e) {
     console.log(e);
 }
@@ -62,7 +62,11 @@ function makeData(folder, name) {
     const filePath = path.join(folder, name);
     const filesName = fs.readdirSync(filePath);
     const allFiles = filesName
-        .map(item => loaderFile(filePath, item))
+        .map((item) => {
+            const content = loaderFile(filePath, item, name);
+            content.weeklyType = name;
+            return content;
+        })
         .filter(item => !!item);
     return allFiles;
 }

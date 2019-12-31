@@ -6,10 +6,17 @@ keywords:
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-perPage: 2
-pagination_dir:
-  - share
-  - weekly
+blog_category:
+  - FE
+  - UI
+  - BE
+  - QA
+weekly_category:
+  - education
+  - profession
+perPage: 10
+index_weekly_num: 3
+index_blog_perpage: 5
 
 #configDir
-docConfigDir: ./data/docConfig.js
+docConfigDir: ./data/testConfig.js

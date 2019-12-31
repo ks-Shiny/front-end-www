@@ -1,6 +1,6 @@
 # wdc-fe-www
 
-> 伟东云教育前端官网
+> 伟东云教育技术官网
 
 ## Build Setup
 
@@ -20,3 +20,10 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## 上传博客周刊文档说明
+
+### - docs 文档目录
+
+        -blog //设计博客
+        -weekly // 图片资源

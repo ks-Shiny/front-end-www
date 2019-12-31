@@ -1,28 +1,33 @@
 <template>
-    <div class="article-detail">
-        <div class="intro">
-            <div class="elevate-cover">
-                <div>
-                    <span class="date">{{ date }}-{{ author }}</span>
-                    <h1 class="title">
-                        {{ title }}
-                    </h1>
-                    <p class="description">
-                        {{ description }}
-                    </p>
-                </div>
-                <div class="img">
-                    <img :src="`/images/${type}/${name}/_main.jpg`">
+    <div class="article-detail container">
+        <template v-if="!pdfUrl">
+            <div class="intro">
+                <div class="elevate-cover">
+                    <div>
+                        <span class="date">{{ date }}-{{ author }}</span>
+                        <h1 class="title">
+                            {{ title }}
+                        </h1>
+                        <p class="description">
+                            {{ description }}
+                        </p>
+                    </div>
+                    <div
+                        v-if="mainImage"
+                        class="img"
+                    >
+                        <img :src="`/images/docs/${mainImage}`">
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <div
+                class="markdow-part"
+                v-html="html"
+            />
+        </template>
         <div
-            class="markdow-part"
-            v-html="html"
-        />
-        <div
-            v-if="pdfUrl"
+            v-else
             class="pdf-outer"
         >
             <iframe
@@ -55,12 +60,12 @@ export default {
         const { html } = fileContent;
 
         return {
-            title: attr.title,
+            title: attr.name,
             author: attr.author,
             date: attr.date,
             description: attr.description,
             html,
-            noMainImage: attr.noMainImage,
+            mainImage: attr.mainImage,
             name: attr.name,
             type: params.type,
             pdfUrl: attr.pdfname ? `/pdf/${attr.pdfname}` : ''
@@ -92,6 +97,10 @@ export default {
     }
     .img-cover {
       line-height: 0;
+    }
+    .img {
+      text-align: center;
+      margin: 20px auto;
     }
     img {
       max-width: 100%;

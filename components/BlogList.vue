@@ -13,14 +13,15 @@
                             {{ item.enDate }}
                         </div>
                         <div class="article-title">
-                            {{ item.title }}
+                            {{ item.name }}
                         </div>
                         <p class="article-decoration">
                             {{ item.description }}
                         </p>
                     </div>
                     <img
-                        src=""
+                        v-if="item.mainImage"
+                        :src="`/images/docs/${item.mainImage}`"
                         alt=""
                         class="article-img"
                     >
@@ -218,13 +219,18 @@ export default {
       color: #888888;
       font-size: 13px;
       line-height: 22px;
+      max-height: 66px;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .article-img {
-      width: 106px;
-      height: 80px;
+      max-width: 106px;
+      max-height: 80px;
       margin-left: 126px;
       display: inline-block;
-      background: #fff;
     }
   }
 }

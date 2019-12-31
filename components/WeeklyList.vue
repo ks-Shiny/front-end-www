@@ -6,17 +6,17 @@
                 :key="item.id"
                 class="weekly-item"
             >
-                <nuxt-link :to="`/`">
+                <nuxt-link :to="`/weeklydetail/${item.weeklyType}/${item.name}`">
                     <div class="weekly-cover" />
                     <div class="weekly-detail">
                         <div class="date">
                             {{ item.enDate }}
                         </div>
                         <div class="title">
-                            {{ item.title }}
+                            {{ item.name }}
                         </div>
                         <div class="desc">
-                            {{ item.desc }}
+                            {{ item.description }}
                         </div>
                     </div>
                 </nuxt-link>
@@ -67,6 +67,12 @@ export default {
         color: #888;
         font-size: 13px;
         line-height: 22px;
+        max-height: 66px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
