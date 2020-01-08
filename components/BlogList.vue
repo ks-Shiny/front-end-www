@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-parsing-error */
 <template>
     <div class="blog-flex">
         <div class="article-list">
@@ -42,7 +43,8 @@
                     class="prev page-btn"
                     @click="handlePrev"
                 >
-                    ''
+                    <!-- eslint-disable-next-line vue/no-parsing-error -->
+                    <
                 </Button>
                 <Button
                     v-for="item in totalPage"

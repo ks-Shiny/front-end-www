@@ -9,5 +9,5 @@ async function copyFiles(from, to) {
         console.error(err);
     }
 }
-copyFiles('./docs/static/images', './static/images/docs');
+copyFiles('./docs/images', './static/images/docs');
 copyFiles('./docs/pdf', './static/pdf');

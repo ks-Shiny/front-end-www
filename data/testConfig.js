@@ -6,13 +6,12 @@ export default {
         data: {
           posts: [
             {
-              name: "blog1",
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              pdfname: "test.pdf",
-              description:
-                "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
-              enDate: "Sept. 2019 10",
+              name: "Vue SEO优化之路",
+              author: "杨梨梨",
+              date: "2019-11-21",
+              pdfname: "Vue SEO优化之路.pdf",
+              description: "",
+              enDate: "Nov. 2019 21",
               categoryType: "FE"
             }
           ],
@@ -27,13 +26,38 @@ export default {
         data: {
           posts: [
             {
-              name: "ui",
-              author: "作者dd12kk3323",
+              name: "Dark Theme",
+              author: "陈健楠",
               mainImage: "56.png",
-              date: "2019-09-10",
-              description:
-                "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha\n",
-              enDate: "Sept. 2019 10",
+              date: "2019-11-12",
+              description: "",
+              enDate: "Nov. 2019 12",
+              categoryType: "UI"
+            },
+            {
+              name: "读书分享-《设计中的设计》",
+              author: "王琴",
+              mainImage: "56.png",
+              date: "2019-10-17",
+              description: "",
+              enDate: "Oct. 2019 17",
+              categoryType: "UI"
+            },
+            {
+              name: "C4D教程：甜甜圈制作步骤",
+              author: "肖逸",
+              date: "2019-08-29",
+              description: "",
+              enDate: "Aug. 2019 29",
+              categoryType: "UI"
+            },
+            {
+              name: "工作中常用的sketch插件",
+              author: "张思宇",
+              mainImage: "56.png",
+              date: "2019-08-22",
+              description: "",
+              enDate: "Aug. 2019 22",
               categoryType: "UI"
             }
           ],
@@ -43,17 +67,54 @@ export default {
         }
       }
     ],
-    BE: [],
+    BE: [
+      {
+        data: {
+          posts: [
+            {
+              name: "走进设计模式",
+              author: "米照雅",
+              mainImage: "56.png",
+              date: "2019-11-08",
+              description: "",
+              enDate: "Nov. 2019 08",
+              categoryType: "BE"
+            },
+            {
+              name: "微服务架构起源、简介及设计",
+              author: "王方方",
+              mainImage: "56.png",
+              date: "2019-11-01",
+              description: "",
+              enDate: "Nov. 2019 01",
+              categoryType: "BE"
+            }
+          ],
+          prev: 0,
+          next: 0,
+          totalPage: 1
+        }
+      }
+    ],
     QA: [
       {
         data: {
           posts: [
             {
-              name: "qa",
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              description: "blog1描述ddded\n",
-              enDate: "Sept. 2019 10",
+              name: "软件本地化及国际化",
+              author: "曹建明",
+              mainImage: "56.png",
+              date: "2019-11-12",
+              description: "",
+              enDate: "Nov. 2019 12",
+              categoryType: "QA"
+            },
+            {
+              name: "Yapi接口测试管理平台使用和分享",
+              author: "刘淼",
+              date: "2019-09-19",
+              description: "",
+              enDate: "Sept. 2019 19",
               categoryType: "QA"
             }
           ],
@@ -68,32 +129,83 @@ export default {
         data: {
           posts: [
             {
-              name: "blog1",
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              pdfname: "test.pdf",
-              description:
-                "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
-              enDate: "Sept. 2019 10",
+              name: "Vue SEO优化之路",
+              author: "杨梨梨",
+              date: "2019-11-21",
+              pdfname: "Vue SEO优化之路.pdf",
+              description: "",
+              enDate: "Nov. 2019 21",
               categoryType: "FE"
             },
             {
-              name: "ui",
-              author: "作者dd12kk3323",
+              name: "Dark Theme",
+              author: "陈健楠",
               mainImage: "56.png",
-              date: "2019-09-10",
-              description:
-                "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha\n",
-              enDate: "Sept. 2019 10",
+              date: "2019-11-12",
+              description: "",
+              enDate: "Nov. 2019 12",
               categoryType: "UI"
             },
             {
-              name: "qa",
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              description: "blog1描述ddded\n",
-              enDate: "Sept. 2019 10",
+              name: "软件本地化及国际化",
+              author: "曹建明",
+              mainImage: "56.png",
+              date: "2019-11-12",
+              description: "",
+              enDate: "Nov. 2019 12",
               categoryType: "QA"
+            },
+            {
+              name: "走进设计模式",
+              author: "米照雅",
+              mainImage: "56.png",
+              date: "2019-11-08",
+              description: "",
+              enDate: "Nov. 2019 08",
+              categoryType: "BE"
+            },
+            {
+              name: "微服务架构起源、简介及设计",
+              author: "王方方",
+              mainImage: "56.png",
+              date: "2019-11-01",
+              description: "",
+              enDate: "Nov. 2019 01",
+              categoryType: "BE"
+            },
+            {
+              name: "读书分享-《设计中的设计》",
+              author: "王琴",
+              mainImage: "56.png",
+              date: "2019-10-17",
+              description: "",
+              enDate: "Oct. 2019 17",
+              categoryType: "UI"
+            },
+            {
+              name: "Yapi接口测试管理平台使用和分享",
+              author: "刘淼",
+              date: "2019-09-19",
+              description: "",
+              enDate: "Sept. 2019 19",
+              categoryType: "QA"
+            },
+            {
+              name: "C4D教程：甜甜圈制作步骤",
+              author: "肖逸",
+              date: "2019-08-29",
+              description: "",
+              enDate: "Aug. 2019 29",
+              categoryType: "UI"
+            },
+            {
+              name: "工作中常用的sketch插件",
+              author: "张思宇",
+              mainImage: "56.png",
+              date: "2019-08-22",
+              description: "",
+              enDate: "Aug. 2019 22",
+              categoryType: "UI"
             }
           ],
           prev: 0,
@@ -105,17 +217,7 @@ export default {
   },
   blogCategory: ["all", "FE", "UI", "BE", "QA"],
   weeklyData: {
-    education: [
-      {
-        name: "blog1",
-        author: "作者dd12kk3323",
-        date: "2019-09-10",
-        description:
-          "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
-        enDate: "Sept. 2019 10",
-        categoryType: "education"
-      }
-    ],
+    education: [],
     profession: []
   },
   weeklyCategory: ["education", "profession"],
@@ -125,50 +227,100 @@ export default {
         data: {
           posts: [
             {
-              name: "blog1",
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              pdfname: "test.pdf",
-              description:
-                "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
-              enDate: "Sept. 2019 10",
+              name: "Vue SEO优化之路",
+              author: "杨梨梨",
+              date: "2019-11-21",
+              pdfname: "Vue SEO优化之路.pdf",
+              description: "",
+              enDate: "Nov. 2019 21",
               categoryType: "FE"
             },
             {
-              name: "ui",
-              author: "作者dd12kk3323",
+              name: "Dark Theme",
+              author: "陈健楠",
               mainImage: "56.png",
-              date: "2019-09-10",
-              description:
-                "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha\n",
-              enDate: "Sept. 2019 10",
+              date: "2019-11-12",
+              description: "",
+              enDate: "Nov. 2019 12",
               categoryType: "UI"
             },
             {
-              name: "qa",
-              author: "作者dd12kk3323",
-              date: "2019-09-10",
-              description: "blog1描述ddded\n",
-              enDate: "Sept. 2019 10",
+              name: "软件本地化及国际化",
+              author: "曹建明",
+              mainImage: "56.png",
+              date: "2019-11-12",
+              description: "",
+              enDate: "Nov. 2019 12",
               categoryType: "QA"
+            },
+            {
+              name: "走进设计模式",
+              author: "米照雅",
+              mainImage: "56.png",
+              date: "2019-11-08",
+              description: "",
+              enDate: "Nov. 2019 08",
+              categoryType: "BE"
+            },
+            {
+              name: "微服务架构起源、简介及设计",
+              author: "王方方",
+              mainImage: "56.png",
+              date: "2019-11-01",
+              description: "",
+              enDate: "Nov. 2019 01",
+              categoryType: "BE"
             }
           ],
           prev: 0,
+          next: 2,
+          totalPage: 2
+        }
+      },
+      {
+        data: {
+          posts: [
+            {
+              name: "读书分享-《设计中的设计》",
+              author: "王琴",
+              mainImage: "56.png",
+              date: "2019-10-17",
+              description: "",
+              enDate: "Oct. 2019 17",
+              categoryType: "UI"
+            },
+            {
+              name: "Yapi接口测试管理平台使用和分享",
+              author: "刘淼",
+              date: "2019-09-19",
+              description: "",
+              enDate: "Sept. 2019 19",
+              categoryType: "QA"
+            },
+            {
+              name: "C4D教程：甜甜圈制作步骤",
+              author: "肖逸",
+              date: "2019-08-29",
+              description: "",
+              enDate: "Aug. 2019 29",
+              categoryType: "UI"
+            },
+            {
+              name: "工作中常用的sketch插件",
+              author: "张思宇",
+              mainImage: "56.png",
+              date: "2019-08-22",
+              description: "",
+              enDate: "Aug. 2019 22",
+              categoryType: "UI"
+            }
+          ],
+          prev: 1,
           next: 0,
-          totalPage: 1
+          totalPage: 2
         }
       }
     ],
-    weeklyData: [
-      {
-        name: "blog1",
-        author: "作者dd12kk3323",
-        date: "2019-09-10",
-        description:
-          "blog1描述dddedBacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen, rump bacon boudin tongue drumstick jowl porchetta fatback cow picanha. Tri-tip sirloin venison, corned beef boudin strip steak shank ham hock ball tip andouille tongue turkey brisket landjaeger ground round. Biltong corned beef pork ham, cupim sirloin ribeye. Leberkas corned beef rump fatback prosciutto burgdoggen meatloaf kielbasa bresaola pig ham pork loin landjaeger picanha. Pastrami pork pork belly shoulder bresaola, chuck brisket flank boudin spare ribs alcatra ham picanha.\n",
-        enDate: "Sept. 2019 10",
-        categoryType: "education"
-      }
-    ]
+    weeklyData: []
   }
 };

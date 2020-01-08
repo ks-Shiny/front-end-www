@@ -1,26 +1,19 @@
 <template>
     <div class="article-detail container">
-        <template v-if="!pdfUrl">
-            <div class="intro">
-                <div class="elevate-cover">
-                    <div>
-                        <span class="date">{{ date }}-{{ author }}</span>
-                        <h1 class="title">
-                            {{ title }}
-                        </h1>
-                        <p class="description">
-                            {{ description }}
-                        </p>
-                    </div>
-                    <div
-                        v-if="mainImage"
-                        class="img"
-                    >
-                        <img :src="`/images/docs/${mainImage}`">
-                    </div>
+        <div class="intro">
+            <div class="elevate-cover">
+                <div>
+                    <span class="date">{{ date }}-{{ author }}</span>
+                    <h1 class="title">
+                        {{ title }}
+                    </h1>
+                    <p class="description">
+                        {{ description }}
+                    </p>
                 </div>
             </div>
-
+        </div>
+        <template v-if="!pdfUrl">
             <div
                 class="markdow-part"
                 v-html="html"
@@ -43,6 +36,8 @@
 </template>
 
 <script>
+import { replaceImgSrc } from '../../../plugins/utils';
+
 export default {
     async asyncData({ params, error }) {
         let fileContent;
@@ -57,8 +52,8 @@ export default {
             }
         }
         const attr = fileContent.attributes;
-        const { html } = fileContent;
-
+        let { html } = fileContent;
+        html = replaceImgSrc(html);
         return {
             title: attr.name,
             author: attr.author,
@@ -118,6 +113,11 @@ export default {
   padding: 20px 0;
   font-size: 16px;
   line-height: 1.7;
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+  }
 
   h2 {
     padding-top: 20px;
@@ -156,8 +156,8 @@ export default {
   }
 }
 .pdf-outer {
-  min-height: 500px;
-  height: 500px;
+  min-height: 800px;
+  height: 800px;
 }
 @keyframes fadeIn {
   0% {
